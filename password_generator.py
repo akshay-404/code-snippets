@@ -1,9 +1,10 @@
 import random
+import pyperclip as clip
 
 caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 lower = "abcdefghijklmnopqrstuvwxyz"
 num = "1234567890"
-sym = "~!@#$%^&*()[],.<>;:?+-_"
+sym = "!()-.?[]_`~;:@#$%^&*+="
 seq = []
 
 while True:
@@ -36,9 +37,12 @@ password = ""
 for i in range(N):
     password += ''.join(random.sample(seq[i%len(seq)], 1))
 
-print(password)
 password = list(password)
-print(password)
-random.shuffle(password)
+for i in range(random.randint(0,N)):
+    random.shuffle(password)
 password = ''.join(password)
-print(password)
+
+print("Generated password : " + password)
+copy = input("Would you like to copy password to clipboard ? (y/n)")
+if copy == 'y':
+    clip.copy(password)
