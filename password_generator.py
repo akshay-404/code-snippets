@@ -2,7 +2,7 @@ import random
 import pyperclip as clip
 
 caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-lower = "abcdefghijklmnopqrstuvwxyz"
+low = "abcdefghijklmnopqrstuvwxyz"
 num = "1234567890"
 sym = "!()-.?[]_`~;:@#$%^&*+="
 seq = []
@@ -19,13 +19,13 @@ while True:
         break
 
 while True:
-    if input("Include upper case letters ? (y/n) : ") == 'y':
+    if (input("Include upper case letters ? (y/n) : ")).lower() == 'y':
         seq.append(caps)
-    if input("Include lower case letters ? (y/n) : ") == 'y':
-        seq.append(lower)
-    if input("Include numbers ? (y/n) : ") == 'y':
+    if (input("Include lower case letters ? (y/n) : ")).lower() == 'y':
+        seq.append(low)
+    if (input("Include numbers ? (y/n) : ")).lower() == 'y':
         seq.append(num)
-    if input("Include symbols ? (y/n) : ") == 'y':
+    if (input("Include symbols ? (y/n) : ")).lower() == 'y':
         seq.append(sym)
     if seq == []:
         print('ERROR : No set of character chosen !\n')
@@ -43,6 +43,5 @@ for i in range(random.randint(0,N)):
 password = ''.join(password)
 
 print("Generated password : " + password)
-copy = input("Would you like to copy password to clipboard ? (y/n)")
-if copy == 'y':
+if input("Would you like to copy password to clipboard ? (y/n) ").lower() == 'y' :
     clip.copy(password)
