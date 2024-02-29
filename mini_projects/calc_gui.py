@@ -1,7 +1,8 @@
 from tkinter import *
 
 root = Tk()
-root.title('Calculator Project')
+
+root.title('Calculator')
 e = Entry(root, width=40, borderwidth=5)
 e.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
 n1 = None
@@ -37,21 +38,21 @@ def equal():
 def clear():
     e.delete(0, END)    
 
-button1 = Button(root, text='1', width=12, height=3, command=lambda: click(1), font='bold')
-button2 = Button(root, text='2', width=12, height=3, command=lambda: click(2), font='bold')
-button3 = Button(root, text='3', width=12, height=3, command=lambda: click(3), font='bold')
-button4 = Button(root, text='4', width=12, height=3, command=lambda: click(4), font='bold')
-button5 = Button(root, text='5', width=12, height=3, command=lambda: click(5), font='bold')
-button6 = Button(root, text='6', width=12, height=3, command=lambda: click(6), font='bold')
-button7 = Button(root, text='7', width=12, height=3, command=lambda: click(7), font='bold')
-button8 = Button(root, text='8', width=12, height=3, command=lambda: click(8), font='bold')
-button9 = Button(root, text='9', width=12, height=3, command=lambda: click(9), font='bold')
-button0 = Button(root, text='0', width=12, height=3, command=lambda: click(0), font='bold')
+button1 = Button(root, text='1', padx=40, pady=20, command=lambda: click(1))
+button2 = Button(root, text='2', padx=40, pady=20, command=lambda: click(2))
+button3 = Button(root, text='3', padx=40, pady=20, command=lambda: click(3))
+button4 = Button(root, text='4', padx=40, pady=20, command=lambda: click(4))
+button5 = Button(root, text='5', padx=40, pady=20, command=lambda: click(5))
+button6 = Button(root, text='6', padx=40, pady=20, command=lambda: click(6))
+button7 = Button(root, text='7', padx=40, pady=20, command=lambda: click(7))
+button8 = Button(root, text='8', padx=40, pady=20, command=lambda: click(8))
+button9 = Button(root, text='9', padx=40, pady=20, command=lambda: click(9))
+button0 = Button(root, text='0', padx=40, pady=20, command=lambda: click(0))
 
-button_p = Button(root, text='+', width=12, height=3, command=add, font='bold')
-button_m = Button(root, text='-', width=12, height=3, command=subtract, font='bold')
-button_c = Button(root, text='Clear All', width=24, height=3, command=clear, font='bold')
-button_e = Button(root, text='=', width=12, height=3, command=equal, font='bold')
+button_p = Button(root, text='+', padx=40, pady=20, command=add)
+button_m = Button(root, text='-', padx=40, pady=20, command=subtract)
+button_c = Button(root, text='Clear All', padx = 70, pady=20, command=clear)
+button_e = Button(root, text='=', padx=40, pady=20, command=equal)
 
 button1.grid(row=3, column=0)
 button2.grid(row=3, column=1)
