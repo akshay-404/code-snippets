@@ -20,30 +20,30 @@ def click(num):
 def add():
     global n1
     global op
+    op = '+'
     n1 = int(e.get())
     e.delete(0, END)
-    op = '+'
 
 def subtract():
     global n1
     global op
+    op = '-'
     n1 = int(e.get())
     e.delete(0, END)
-    op = '-'
 
 def multiply():
     global n1
     global op
+    op = '*'
     n1 = int(e.get())
     e.delete(0, END)
-    op = '*'
 
 def divide():
     global n1
     global op
+    op = '/'
     n1 = int(e.get())
     e.delete(0, END)
-    op = '/'
 
 def equal():
     global n1
