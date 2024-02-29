@@ -60,8 +60,6 @@ def equal():
     n1 = None
     op = None
     
-    
-
 def clear():
     e.delete(0, END)    
 
