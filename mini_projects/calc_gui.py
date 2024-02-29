@@ -9,6 +9,10 @@ n1 = None
 op = None
 
 def click(num):
+    global op
+    if op == 0:
+        e.delete(0, END)
+        op = None
     current = e.get()
     e.delete(0, END)
     e.insert(0, str(current) + str(num))
@@ -58,7 +62,7 @@ def equal():
         e.delete(0, END)
         e.insert(0, n1 / n2)
     n1 = None
-    op = None
+    op = 0
     
 def clear():
     e.delete(0, END)    
