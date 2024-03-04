@@ -5,7 +5,7 @@ import os
 fileType = ['.jpg', '.jpeg', '.png', '.gif', '.bmp']
 root = Tk()
 root.title('Image Viewer')
-root.iconbitmap(os.path.abspath('imgicon.ico'))
+root.iconbitmap(r'D:\Programming\Git\project\mini_projects\imgicon.ico')
 e = Entry(root, width=40, font='bold', borderwidth=5, justify='center')
 e.grid(row=0, column=0, columnspan=2)
 
@@ -31,17 +31,15 @@ def getList():
     imgList = []
     imgList = [os.path.join(fileRoot, file) for fileRoot, _, files in os.walk(directory)
             for file in files if any(file.endswith(t) for t in fileType)]
-    print(imgList)
     if imgList == []:
         inValid = Label(root, text='Invalid or Empty Directory !', fg='red', font='bold')
         inValid.grid(row=4, column=0, columnspan=3)
         return None
-    
     myEnter.grid_remove()
     myExit.grid_remove()
     e.grid_remove()
 
-    global next, p_exit, prev, myImg, index, pic
+    global next, p_exit, prev, myImg, index, pic, status
     index = 0
     pic = image_resize(imgList[index])
     myImg = Label(image=pic)
@@ -53,9 +51,11 @@ def getList():
     p_exit.grid(row=1, column=1)
     next = Button(root, text='>>>', font='bold', borderwidth=5, command=funcNext)
     next.grid(row=1, column=2)
+    status = Label(root, text=f'Image {index+1} of {len(imgList)}', bd=2, relief=SUNKEN, anchor=E)
+    status.grid(row=2, column=0, columnspan=3, sticky=W+E)
 
 def funcNext():
-    global imgList, myImg, index, pic
+    global imgList, myImg, index, pic, status
     myImg.grid_remove()
     if index == len(imgList)-1:
         index = 0
@@ -64,9 +64,11 @@ def funcNext():
     pic = image_resize(imgList[index])
     myImg = Label(image=pic)
     myImg.grid(row=0, column=0, columnspan=3)
+    status = Label(root, text=f'Image {index+1} of {len(imgList)}', bd=2, relief=SUNKEN, anchor=E)
+    status.grid(row=2, column=0, columnspan=3, sticky=W+E)
 
 def funcPrev():
-    global imgList, myImg, index, pic
+    global imgList, myImg, index, pic, status
     myImg.grid_remove()
     if index == 0:
         index = len(imgList)-1
@@ -75,7 +77,9 @@ def funcPrev():
     pic = image_resize(imgList[index])
     myImg = Label(image=pic)
     myImg.grid(row=0, column=0, columnspan=3)
-    
+    status = Label(root, text=f'Image {index+1} of {len(imgList)}', bd=2, relief=SUNKEN, anchor=E)
+    status.grid(row=2, column=0, columnspan=3, sticky=W+E)
+       
 myEnter = Button(root, text='ENTER', width=15, font='bold', command=getList)
 myExit = Button(root, text='EXIT', width=15, font='bold', command=root.quit)
 myEnter.grid(row=1, column=1)
