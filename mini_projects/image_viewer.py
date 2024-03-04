@@ -5,7 +5,7 @@ import os
 fileType = ['.jpg', '.jpeg', '.png', '.gif', '.bmp']
 root = Tk()
 root.title('Image Viewer')
-root.iconbitmap(r'D:\Programming\Git\project\mini_projects\imgicon.ico')
+root.iconbitmap(os.path.dirname(__file__) + r'\imgicon.ico')
 e = Entry(root, width=40, font='bold', borderwidth=5, justify='center')
 e.grid(row=0, column=0, columnspan=2)
 
@@ -79,7 +79,7 @@ def funcPrev():
     myImg.grid(row=0, column=0, columnspan=3)
     status = Label(root, text=f'Image {index+1} of {len(imgList)}', bd=2, relief=SUNKEN, anchor=E)
     status.grid(row=2, column=0, columnspan=3, sticky=W+E)
-       
+
 myEnter = Button(root, text='ENTER', width=15, font='bold', command=getList)
 myExit = Button(root, text='EXIT', width=15, font='bold', command=root.quit)
 myEnter.grid(row=1, column=1)
