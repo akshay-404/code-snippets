@@ -55,7 +55,7 @@ def getList():
     next.grid(row=1, column=2)
 
 def funcNext():
-    global imgList, next, myImg, index, pic
+    global imgList, myImg, index, pic
     myImg.grid_remove()
     if index == len(imgList)-1:
         index = 0
@@ -66,7 +66,7 @@ def funcNext():
     myImg.grid(row=0, column=0, columnspan=3)
 
 def funcPrev():
-    global imgList, next, myImg, index, pic
+    global imgList, myImg, index, pic
     myImg.grid_remove()
     if index == 0:
         index = len(imgList)-1
@@ -76,7 +76,6 @@ def funcPrev():
     myImg = Label(image=pic)
     myImg.grid(row=0, column=0, columnspan=3)
     
-
 myEnter = Button(root, text='ENTER', width=15, font='bold', command=getList)
 myExit = Button(root, text='EXIT', width=15, font='bold', command=root.quit)
 myEnter.grid(row=1, column=1)
