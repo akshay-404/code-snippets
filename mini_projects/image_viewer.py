@@ -21,7 +21,7 @@ def image_resize(img_path):
     return ImageTk.PhotoImage(img)
 
 def getList():
-    global imgList, myEnter, myExit, inValid
+    global imgList, myEnter, myExit, inValid, directory
     try:
         inValid.grid_remove()
     except NameError:
@@ -51,7 +51,7 @@ def getList():
     p_exit.grid(row=1, column=1)
     next = Button(root, text='>>>', font='bold', borderwidth=5, command=funcNext)
     next.grid(row=1, column=2)
-    status = Label(root, text=f'Image {index+1} of {len(imgList)}', bd=2, relief=SUNKEN, anchor=E)
+    status = Label(root, text=f'{os.path.basename(imgList[index])}\t\t\t\t\t\t\t\tImage {index+1} of {len(imgList)}', bd=2, relief=SUNKEN, anchor='center')
     status.grid(row=2, column=0, columnspan=3, sticky=W+E)
 
 def funcNext():
@@ -64,7 +64,7 @@ def funcNext():
     pic = image_resize(imgList[index])
     myImg = Label(image=pic)
     myImg.grid(row=0, column=0, columnspan=3)
-    status = Label(root, text=f'Image {index+1} of {len(imgList)}', bd=2, relief=SUNKEN, anchor=E)
+    status = Label(root, text=f'{os.path.basename(imgList[index])}\t\t\t\t\t\t\t\tImage {index+1} of {len(imgList)}', bd=2, relief=SUNKEN, anchor='center')
     status.grid(row=2, column=0, columnspan=3, sticky=W+E)
 
 def funcPrev():
@@ -77,7 +77,7 @@ def funcPrev():
     pic = image_resize(imgList[index])
     myImg = Label(image=pic)
     myImg.grid(row=0, column=0, columnspan=3)
-    status = Label(root, text=f'Image {index+1} of {len(imgList)}', bd=2, relief=SUNKEN, anchor=E)
+    status = Label(root, text=f'{os.path.basename(imgList[index])}\t\t\t\t\t\t\t\tImage {index+1} of {len(imgList)}', bd=2, relief=SUNKEN, anchor='center')
     status.grid(row=2, column=0, columnspan=3, sticky=W+E)
 
 myEnter = Button(root, text='ENTER', width=15, font='bold', command=getList)
