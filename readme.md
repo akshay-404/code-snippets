@@ -1,1 +1,6 @@
-This repository contains mini projects I have done in mostly Python, C++ to learn and understand different libraries, including tkinter, pandas, numpy, etc. The projects serve no useful purpose other than as a means to know and understand the implementation of basic functionalities of above said libraries.
+# 🚀 Repo of Remarkably Ridiculous Python Nanoquests 🐍🎉
+
+You'll find small programs written in Python and C++ in this repository. We explore libraries like Tkinter, Numpy, Matplotlib and more 🐍💻. In the future, more advanced projects in Python on data analysis, data science, and AI-ML will be added, and we will explore more complex libraries like Tensorflow, Scikit, Pytorch, SciPy, etc. 
+
+## Timeline ⌛
+10-06-2024 : Added some beginner programs after some reorganising. ✅
