@@ -42,7 +42,7 @@ def update_clock():
 
     s_r = math.radians(ss*6 - 90)
     m_r = math.radians(mm*6 - 90)
-    h_r = math.radians(hh*30 + 5*mm/60 - 90)
+    h_r = math.radians(hh*30 + mm/2 - 90)
 
     h_x, h_y = math.cos(h_r)*h_len + 200, math.sin(h_r)*h_len + 200
     m_x, m_y = math.cos(m_r)*m_len + 200, math.sin(m_r)*m_len + 200
