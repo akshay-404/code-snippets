@@ -4,3 +4,4 @@ You'll find small programs written in Python and C++ in this repository. We expl
 
 ## Timeline ⌛
 10-06-2024 : Added some beginner programs after some reorganising. ✅
+18-06-2024 : Added an analog clock program with GUI using Tkinter. 🕓
