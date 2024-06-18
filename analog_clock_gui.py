@@ -10,7 +10,7 @@ root.iconbitmap(os.path.dirname(__file__) + r'\clockico.ico')
 length, radius = 200, 180
 frm = Frame(root)
 frm.pack(padx=20)
-Label(frm, text='ANALOG CLOCK', font=('Consolas',26, "bold")).pack()
+Label(frm, text='ANALOG CLOCK', font=('', 26, 'bold')).pack()
 
 can = Canvas(frm, height=2*length, width=2*length, highlightthickness=2, highlightbackground='black')
 
