@@ -30,6 +30,7 @@ h_hand = can.create_line(length, length, length, length-h_len, width=6, arrow='l
 m_hand = can.create_line(length, length, length+m_len, length, width=4, arrow='last', fill='black')
 s_hand = can.create_line(length, length, length, length+s_len, width=2, arrow='last', fill='blue')
 
+can.bind('<Button-1>', quit)
 can.pack()
 
 time_now = StringVar(root)
