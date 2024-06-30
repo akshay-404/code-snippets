@@ -5,7 +5,8 @@ import os, math
 root = Tk()
 root.title('Analog Clock')
 root.resizable(width=False, height=False)
-root.iconbitmap(os.path.dirname(__file__) + r'\clockico.ico')
+# --- Change icon path if needed ---
+root.iconbitmap(r'Git\code-snippets\additional-files\clockico.ico')
 
 length, radius = 200, 180
 frm = Frame(root)

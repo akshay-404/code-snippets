@@ -5,7 +5,8 @@ import os
 fileType = ['.jpg', '.jpeg', '.png', '.gif', '.bmp']
 root = Tk()
 root.title('Image Viewer')
-root.iconbitmap(os.path.dirname(__file__) + r'\imgicon.ico')
+# --- Change file path ---
+root.iconbitmap(r'Git\code-snippets\additional-files\imgicon.ico')
 e = Entry(root, width=40, font='bold', borderwidth=5, justify='center')
 e.grid(row=0, column=0, columnspan=2)
 
