@@ -6,3 +6,5 @@ You'll find small programs written in Python and C++ in this repository. We expl
 10-06-2024 : Added some beginner programs after some reorganising. ✅
 
 18-06-2024 : Added an analog clock program with GUI using Tkinter. 🕓
+
+30-06-2024 : Added a currency exchange rate calculator which works using 'openexchangerates.org' api 💰
