@@ -30,11 +30,15 @@ def getData(data_file, url):
     try:
         global timeUp
         response = rq.get(url)
+        print(f'Response : {response}')
         if response.status_code == 200:
             with open(data_file, 'w') as file:
                 json.dump(response.json(), file)
             data['timestamp'] = response.json().get('timestamp')
             update_time()
+        else:
+            if not os.path.isfile(data_file):
+                raise RuntimeError(f'{api} api error occured')
     except rq.exceptions.ConnectionError as e:
         print(e)
 
@@ -116,11 +120,7 @@ list_2 = ttk.Combobox(root, values=value, font=('Helvetica', 18, 'normal'), stat
 list_2.set('Select a currency...')
 list_2.grid(column=0, row=2, columnspan=2)
 
-def validate(value):
-    if re.fullmatch(r'^\d*\.?\d{0,3}$', value):
-        return True
-    else:
-        return False
+validate = lambda value: bool(re.fullmatch(r'^\d*\.?\d{0,3}$', value))
 validate_cmd = root.register(validate)
 
 entry1Var, entry2Var = DoubleVar(), DoubleVar()
