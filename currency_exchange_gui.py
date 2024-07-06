@@ -35,7 +35,10 @@ def getData(data_file, url):
             with open(data_file, 'w') as file:
                 json.dump(response.json(), file)
             data['timestamp'] = response.json().get('timestamp')
-            update_time()
+            try:
+                update_time()
+            except NameError:
+                pass
         else:
             if not os.path.isfile(data_file):
                 raise RuntimeError(f'{api} api error occured')
