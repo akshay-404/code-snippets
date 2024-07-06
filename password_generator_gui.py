@@ -1,6 +1,6 @@
 from tkinter import *
 import pyperclip as py
-import random
+import random, string
 
 root = Tk()
 root.title('PASSWORD GENERATOR')
@@ -26,10 +26,10 @@ checkThree.grid(row=3, column=0)
 checkFour = Checkbutton(frame, text='Symbols', variable=four, onvalue=True, offvalue=False, font=10, anchor='w')
 checkFour.grid(row=4, column=0)
 
-caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-low = "abcdefghijklmnopqrstuvwxyz"
-num = "1234567890"
-sym = "!()-.?[]_`~;\\/:@#$%^&*+="
+caps = string.ascii_uppercase
+low = string.ascii_lowercase
+num = string.digits
+sym = string.punctuation
 
 global password
 
@@ -88,14 +88,14 @@ def generate():
     global close
     close.grid_remove()
     close = Button(root, text='Exit', command=root.quit, width=20, font=10)
-    close.grid(row=8, column=0, columnspan=2)
+    close.grid(row=8, column=0, columnspan=2, pady=(0,15))
 
 button = Button(root, text='Generate Password', width=20, font=10, command=generate)
 button.grid(row=5, column=0, columnspan=2)
 
 try:
     close = Button(root, text='Exit', command=root.quit, width=20, font=10)
-    close.grid(row=7, column=0, columnspan=2)
+    close.grid(row=7, column=0, columnspan=2, pady=(0,15))
 except UnboundLocalError:
     pass
 
