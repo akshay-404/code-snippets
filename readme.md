@@ -8,3 +8,5 @@ You'll find small programs written in Python and C++ in this repository. We expl
 18-06-2024 : Added an analog clock program with GUI using Tkinter. 🕓
 
 30-06-2024 : Added a currency exchange rate calculator which works using 'openexchangerates.org' api 💰
+
+27-01-2025 : Added a automated python script to login to IIT_BHU wifi via browser
