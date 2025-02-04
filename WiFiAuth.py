@@ -23,7 +23,6 @@ try:
     password = driver.find_element(By.NAME, "password")
     password.send_keys(PASS)
     password.send_keys(Keys.RETURN)
-    time.sleep(1)
 
 except Exception as e:
     print(e)
