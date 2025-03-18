@@ -141,16 +141,18 @@ int main(){
 		
 		cout << endl;
 		cout << "---------------------------------------------------\n";
-		system("CLS");
+		if (system("cls")){
+    		system("clear");
+		}
 	}
 	while ( repeat == 'y' || repeat == 'Y');
 	
 	cout << "Thank you for playing !!\n" << endl;
 	cin.get();
 	cout << "--------------------- Credits ---------------------\n";
-	cout << "                    Akshay Anil\n" << endl;;
+	cout << "                    Akshay Anil" << endl;;
 	cout << "---------------------------------------------------\n";
 	
-	system ("pause");
+	cin.get();
 	return 0;
 }
