@@ -39,6 +39,8 @@ def login(url_check="http://connectivitycheck.gstatic.com/generate_204"):
         if "keepalive" in response.text:
             return 1
         else:
+            with open("error.log", "w") as f:
+                f.write(response.text)
             return -1
         
 if __name__ == "__main__":
