@@ -51,7 +51,7 @@ status_box = ctk.CTkFrame(frame, corner_radius=12, fg_color="#202225")
 status_box.pack(pady=10, padx=30, fill="x")
 
 color = "green" if exitcode == 1 else "red" if exitcode == -1 else "orange"
-text = "Connectedn successfully!" if exitcode == 1 else "Login failed!" if exitcode == -1 else "Already connected!"
+text = "Connected successfully!" if exitcode == 1 else "Login failed!" if exitcode == -1 else "Already connected!"
 
 ctk.CTkLabel(
     status_box, text=text,
