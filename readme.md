@@ -10,3 +10,5 @@ You'll find small programs written in Python and C++ in this repository. We expl
 30-06-2024: Added a currency exchange rate calculator using the 'openexchangerates.org' API. 💰
 
 27-01-2025: Added an automated Python script to login to IIT_BHU wifi via browser. 🛜
+
+14-04-2025: Added a more advanced wifi login using request module and with GUI. 🔑

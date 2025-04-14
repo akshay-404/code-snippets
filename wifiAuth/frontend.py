@@ -1,5 +1,15 @@
 import customtkinter as ctk
 from backend import login
+import sys
+import os
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS  # This is where PyInstaller stores temp files
+    except AttributeError:
+        base_path = os.path.abspath(".")  # When running normally
+
+    return os.path.join(base_path, relative_path)
 
 # Theme setup
 ctk.set_appearance_mode("dark")  # Can also be "light" or "system"
@@ -10,7 +20,8 @@ app = ctk.CTk()
 app.title("LoginLink - WiFi Auto Authenticator")
 app.geometry("460x260")
 app.resizable(False, False)
-app.iconbitmap(r"additional-files\login.ico")
+icon_path = resource_path("login.ico")
+app.iconbitmap(default=icon_path)
 
 # Perform login
 exitcode = login()
